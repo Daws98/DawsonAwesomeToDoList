@@ -1,25 +1,20 @@
-/**
- * My To Do List App
- *
- * @format
- */
-
 import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
+  Pressable,
   View,
   Text,
+  ScrollView,
+  TextInput,
+  Button,
 } from 'react-native';
-import ToDoList from './components/ToDoList';
-import ToDoForm from './components/ToDoForm';
-
-function App() {
+function ToDoForm() {
   return (
-    <SafeAreaView>
-      <ToDoList />
-      <ToDoForm />
-    </SafeAreaView>
+    <View style={styles.form}>
+      <TextInput style={styles.input} placeholder="Add a new task..." />
+      <Button title="Add" />
+    </View>
   );
 }
 
@@ -51,5 +46,4 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
 });
-
-export default App;
+export default ToDoForm;
