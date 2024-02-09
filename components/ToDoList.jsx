@@ -24,10 +24,23 @@ function ToDoList({items}) {
     );
 
     renderedItems.push(rendered)
-
+    }
+    function mapItems(value){
+      
+    }
   return (
     <ScrollView>
         {renderedItems}
+        {items.map((value,index) => (
+            <Pressable>
+              <View style={[styles.task]}>
+                <Text style={styles.taskText}>{value}</Text>
+              </View>
+            </Pressable>
+          
+          )
+
+         )}
       </ScrollView>
      
   );
