@@ -9,24 +9,25 @@ import {
   TextInput,
   Button
 } from 'react-native';
-function ToDoList() {
+
+function ToDoList({items}) {
+  // const {items} = props;
+
+  const renderItem = [];
+  for (const item of items) {
+    const rendered = (
+      <Pressable>
+        <View style={[styles.task]}>
+          <Text style={styles.taskText}>{item}</Text>
+        </View>
+      </Pressable>
+    );
+
+    renderedItems.push(rendered)
+
   return (
     <ScrollView>
-        <Pressable>
-          <View style={[styles.task, styles.completed]}>
-            <Text style={styles.taskText}>Go to gym</Text>
-          </View>
-        </Pressable>
-        <Pressable>
-          <View style={[styles.task]}>
-            <Text style={styles.taskText}>Buy groceries</Text>
-          </View>
-        </Pressable>
-        <Pressable>
-          <View style={[styles.task, styles.completed]}>
-            <Text style={styles.taskText}>Wash car</Text>
-          </View>
-        </Pressable>
+        {renderedItems}
       </ScrollView>
      
   );
