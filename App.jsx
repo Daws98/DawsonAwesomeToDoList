@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import ToDoList from './components/ToDoList';
 import ToDoForm from './components/ToDoForm';
+import useState from 'react';
 
 function App() {
   const [items, setItems] = React.useState(
@@ -24,7 +25,7 @@ function App() {
 
   return (
     <SafeAreaView>
-      <ToDoList />
+      <ToDoList items={items} />
       <ToDoForm />
     </SafeAreaView>
   );
