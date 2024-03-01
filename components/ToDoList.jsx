@@ -1,25 +1,18 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Pressable,
-  View,
-  Text,
-  ScrollView,
-  TextInput,
-  Button,
-} from 'react-native';
+import {SafeAreaView, StyleSheet, Pressable, View, Text, ScrollView, TextInput, Button,} from 'react-native';
 
 function ToDoList({items}) {
-    return (
+  return (
     <ScrollView>
-      {items.map((value, index) => (
-        <Pressable>
-          <View style={[styles.task]}>
-            <Text style={styles.taskText}>{value}</Text>
-          </View>
-        </Pressable>
-      ))}
+      {items.map((value, index) => {
+        return (
+          <Pressable key={index}>
+            <View style={[styles.task]}>
+              <Text style={styles.taskText}>{value}</Text>
+            </View>
+          </Pressable>
+        );
+      })}
     </ScrollView>
   );
 }
