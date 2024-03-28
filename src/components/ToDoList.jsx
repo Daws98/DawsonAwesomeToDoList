@@ -1,13 +1,17 @@
-import React from 'react';
+import React , {Component} from 'react';
 import {SafeAreaView, StyleSheet, Pressable, View, Text, ScrollView, TextInput, Button,} from 'react-native';
 
-function ToDoForm({ addTask }) {
-  const [taskText, setTaskText] = React.useState('');
+function ToDoList({tasks}) {
   return (
-    <View style={styles.form}>
-      <TextInput style={styles.input} placeholder="Add a new task..." onChangeText={(text) => setTaskText(text)} value={taskText}/>
-      <Button title="Add Task" onPress={() => addTask(taskText)} />
-    </View>
+    <ScrollView>
+      {tasks.map((task, key) => (
+          <Pressable key={key}>
+            <View style={[styles.task]}>
+              <Text style={styles.taskText}>{task}</Text>
+            </View>
+          </Pressable>
+      ))}    
+    </ScrollView>
   );
 }
 
@@ -39,4 +43,5 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
 });
-export default ToDoForm;
+
+export default ToDoList;
